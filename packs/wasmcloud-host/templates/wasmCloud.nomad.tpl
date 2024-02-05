@@ -36,7 +36,7 @@ job [[ template "job_name" . ]] {
       driver = "docker"
 
       config {
-        image        = "nats:2.3"
+        image        = "nats:2.9"
         command      = "-js"
         args         = ["-m", "6003"]
         ports = ["nats","natshealth"]
@@ -85,7 +85,7 @@ group "wasmcloud" {
       }
 
       config {
-        image = "wasmcloud/wasmcloud_host:0.50.3"
+        image = "louiaduc/wasmcloud-ubuntu:latest"
       }
     }
   }
