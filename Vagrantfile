@@ -108,4 +108,9 @@ Vagrant.configure("2") do |config|
     end
   end
 
+  config.vm.synced_folder '.', '/vagrant', disabled: true
+  config.vm.provider "virtualbox" do |vb|
+    vb.customize [ "modifyvm", :id, "--uartmode1", "disconnected" ]
+  end
+
 end
